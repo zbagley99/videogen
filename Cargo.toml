@@ -1,0 +1,42 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+license = "MIT"
+
+[workspace.dependencies]
+vg-core = { path = "crates/vg-core" }
+vg-render = { path = "crates/vg-render" }
+vg-media = { path = "crates/vg-media" }
+vg-project = { path = "crates/vg-project" }
+vg-audio = { path = "crates/vg-audio" }
+vg-llm = { path = "crates/vg-llm" }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+ron = "0.12"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "gif", "bmp"] }
+strsim = "0.11"
+serde_json = "1"
+wgpu = "29"
+pollster = "0.4"
+bytemuck = { version = "1", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
+hound = "3.5"
+
+# Dependencies are optimised, so step-debugging into them is rarely useful;
+# dropping their debug info keeps target/ several times smaller.
+[profile.dev.package."*"]
+opt-level = 2
+debug = false
+
+# Index loops over several parallel buffers (DSP, lane layout) read better
+# than the iterator chains this lint suggests.
+[workspace.lints.clippy]
+needless_range_loop = "allow"
+
+# Optimise across crate boundaries in release builds (dev builds stay fast).
+[profile.release]
+lto = "thin"

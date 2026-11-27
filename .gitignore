@@ -1,0 +1,26 @@
+# Only the code and its docs are tracked. Everything else at the top level is
+# working or project material (scripts, recordings, transcripts, edits, pose
+# art and libraries, projects, exports) and stays local.
+/*
+!/.gitignore
+!/Cargo.toml
+!/Cargo.lock
+!/LICENSE
+!/README.md
+!/videogen.example.ron
+!/crates/
+!/docs/
+!/sidecar/
+
+# Build output and the sidecar's virtualenv.
+/target
+sidecar/whisper/.venv/
+
+# Media and project files, wherever they end up.
+*.wav
+*.mov
+*.mp4
+*.vgproj
+*.vgmix
+*.words.json
+out/

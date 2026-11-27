@@ -1,0 +1,17 @@
+[package]
+name = "vg-audio"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "videogen: narration clean-up: cuts, effects, loudness and mixing"
+
+[dependencies]
+vg-media.workspace = true
+anyhow.workspace = true
+serde.workspace = true
+ron.workspace = true
+realfft = "3"
+hound.workspace = true
+
+[lints]
+workspace = true

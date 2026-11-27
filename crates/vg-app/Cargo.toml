@@ -1,0 +1,36 @@
+[package]
+name = "vg-app"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "videogen: pose-avatar + caption overlays for self-narrated videos"
+
+[[bin]]
+name = "vg"
+path = "src/main.rs"
+
+[dependencies]
+vg-core.workspace = true
+vg-render.workspace = true
+vg-media.workspace = true
+vg-project.workspace = true
+vg-audio.workspace = true
+vg-llm.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+wgpu.workspace = true
+eframe = { version = "0.34", default-features = false, features = ["wgpu", "wayland", "x11", "default_fonts", "persistence"] }
+egui-wgpu = "0.34"
+rfd = "0.16"
+cpal = "0.16"
+hound.workspace = true
+rodio = { version = "0.21", default-features = false, features = ["playback", "symphonia-all"] }
+serde.workspace = true
+serde_json.workspace = true
+ron.workspace = true
+image.workspace = true
+pollster.workspace = true
+trash = "5"
+
+[lints]
+workspace = true

@@ -1,0 +1,16 @@
+[package]
+name = "vg-render"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+
+[dependencies]
+vg-core.workspace = true
+anyhow.workspace = true
+image.workspace = true
+wgpu.workspace = true
+pollster.workspace = true
+bytemuck.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,10 @@
+[project]
+name = "vg-whisper"
+version = "0.1.0"
+description = "Word-timestamped transcription for videogen (faster-whisper, local GPU)"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "faster-whisper>=1.1",
+    "nvidia-cublas-cu12; sys_platform == 'linux'",
+    "nvidia-cudnn-cu12>=9,<10; sys_platform == 'linux'",
+]

@@ -1,0 +1,16 @@
+[package]
+name = "vg-llm"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "videogen: LLM pose suggestions (OpenAI-compatible servers) with structured output and repair"
+
+[dependencies]
+vg-core.workspace = true
+anyhow.workspace = true
+serde_json.workspace = true
+strsim.workspace = true
+ureq = { version = "3", features = ["json"] }
+
+[lints]
+workspace = true

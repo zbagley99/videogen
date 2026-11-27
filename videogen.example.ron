@@ -1,0 +1,21 @@
+// Copy to ./videogen.ron (local, ignored by git) or ~/.config/videogen/config.ron
+// (or point $VG_CONFIG at a file). Any omitted field keeps its default.
+(
+    // Default OpenAI-compatible server for `vg suggest` and new GUI profiles
+    // (also overridable with $VG_LLM or `--llm`).
+    llm_url: "http://localhost:8080/v1",
+
+    // Servers shown in the Suggest window (Ctrl+G).
+    llm_endpoints: [
+        "http://localhost:8080/v1",
+    ],
+
+    // Default pose library path when none is passed or set by a project.
+    poses: "avatar/poses.ron",
+
+    // Default Whisper model for transcription.
+    whisper_model: "large-v3-turbo",
+
+    // Default comma-separated filler words for `vg transcripts fillers`.
+    fillers: "um, uh, uhm, erm, er, ah, hmm, mm",
+)
